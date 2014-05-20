@@ -1,0 +1,212 @@
+@font-face {
+	font-family: Heinrich Script; /* имя шрифта для CSS правил */
+	src: local("Heinrich Script"), /* проверяем наличие шрифта в ОС пользователя */
+	url("../fonts/Heinrich Script.ttf"); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+
+@font-face {
+	font-family: ShellyAllegroC; /* имя шрифта для CSS правил */
+	src: local("ShellyAllegroC"), /* проверяем наличие шрифта в ОС пользователя */
+	url("../fonts/ShellyAllegroC.ttf"); /* если шрифт не установлен, тогда загружаем его по указанному пути */
+}
+
+body {
+	font-family: "Heinrich Script";
+	background: #ccc;
+	margin: 0;
+	color: #3f3f3f;
+}
+
+.elements .element {
+  list-style: disc inside;
+  padding: 1em;
+}
+
+.pager {
+  text-align: center;
+}
+
+.pager li {
+  display: inline;
+  margin: 0 5px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.navigation_bread_crumb li, .pager li {
+  display: inline;
+}
+
+.headerPhone {
+	list-style: none;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.headerPhone li {
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.footerLogo {
+	background: #d9d9d9;
+	font-family: ShellyAllegroC;
+	font-size: 32px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
+
+.footerLogo li {
+	vertical-align: top;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.footer_text {
+	margin: 10px 0 0 0;
+	padding: 0 0 0 170px;
+}
+
+.footer_logo {
+	padding-left: 670px;
+}
+
+.headerPhone li img{
+	margin-top: 2px;
+}
+
+.headerPhone li h4 {
+	margin: 0;
+}
+
+.header_line {
+	display: inline-block;
+}
+
+.header_line_title {
+	width: 300px;
+}
+
+.header_title {
+	font-family: ShellyAllegroC;
+	font-size: 50px;
+	margin: 0 0 0 0;
+}
+
+.header_title a {
+	color: #3f3f3f;
+	text-decoration: none;
+	margin: 0 0 0 0;
+}
+
+.header_line_logo {
+	margin: 0 0 0 140px;
+	width: 72px;
+}
+
+.header_logo {
+	width: 72px;
+	height: 111px;
+	background: url("../images/header_logo.png") no-repeat;
+}
+
+.header_line_menu {
+	width: 420px;
+	margin: 0 0 0 20px;
+}
+
+.menu_4s ul {
+	margin: 0;
+}
+
+.menu_4s {
+	text-align: right;
+	font-size: 20px;
+	margin: 40px 0 0 0;
+}
+
+.menu_4s li {
+	display: inline-block;
+	margin: 0 0 0 10px;
+}
+
+.menu_4s li a {
+	text-decoration: none;
+	color: #3f3f3f;
+}
+
+.menu_4s li a:hover {
+	text-decoration: underline;
+}
+
+.menu_4s .dm_current {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.feel_slider {
+	list-style: none;
+	width: 960px;
+	margin: -20px 0 0 0;
+	padding: 0;
+}
+
+.feel_slider .element img {
+	border-radius: 10px;
+}
+
+.slide_li_hidden {
+	display: none;
+}
+
+.slide_arrows {
+	margin: -260px 0 0 0;
+	position: absolute;
+}
+
+.slide_arrow {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.slide_right {
+	margin: 0 0 0 843px;
+}
+
+.slider_points {
+	margin: 5px 0 0 0;
+	padding: 0;
+	text-align: right;
+	width: 955px;
+}
+
+.slider_points li {
+	list-style: none;
+	display: inline-block;
+	margin: 0 0 0 3px;
+}
+
+.horDelimer {
+	width: 960px;
+	height: 1px;
+	margin: 5px 0 0 0;
+	padding: 0;
+	background: url("../images/horDelimer.png") no-repeat;
+}

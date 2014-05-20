@@ -1,0 +1,9 @@
+
+Slider:
+  columns:
+    image_id:     { type: integer, notnull: true } # the image is required
+  relations:
+    Image:
+      class:      DmMedia
+      local:      image_id
+      onDelete:   RESTRICT # the image can not be deleted, unless if the article is deleted before

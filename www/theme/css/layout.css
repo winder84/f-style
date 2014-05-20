@@ -1,0 +1,26 @@
+.dm_layout {
+  width: 1248px;
+  margin: auto;
+	background: url("../images/bg.png") repeat-y;
+	box-shadow: 1px 1px 10px #333;
+}
+
+.dm_layout_top {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.dm_layout_center {
+	width: 960px;
+	margin: 0 auto;
+}
+
+.dm_content {
+  width: 960px;
+  float: left;
+}
+
+.dm_layout_bottom {
+	width: 100%;
+	margin: 0 auto;
+}

@@ -1,0 +1,13 @@
+Content:
+
+  Global:
+  
+    main:                   # the main module is required, and must not be removed.
+      components:
+        header:
+        footer:
+    slider:
+      model:                  Slider
+      name:                   Slider|Sliders
+      components:
+        list:
