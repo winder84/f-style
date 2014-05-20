@@ -1,0 +1,34 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Maincentertexts
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: maincentertexts
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=title'
+          - description
+        sort:
+          - title
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - title
+          - description
+      form:
+        display:
+          NONE: [title]
+          Prevdescription: [description]
+        class: MaincentertextsAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

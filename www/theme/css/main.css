@@ -210,3 +210,29 @@ h4 {
 	padding: 0;
 	background: url("../images/horDelimer.png") no-repeat;
 }
+
+.mainCenterTexts {
+	width: 970px;
+	height: 240px;
+	background: url("../images/mainCenterTextsBg.png") no-repeat;
+	margin: 20px 0 20px -5px;
+	padding: 10px;
+}
+
+.mainCenterTexts li {
+	vertical-align: top;
+	list-style: none;
+	display: inline-block;
+	margin: 0 10px;
+	width: 290px;
+}
+
+.mainCenterTextsTitle {
+	font-size: 24px;
+	text-decoration: underline;
+}
+
+.mainCenterText {
+	font-size: 18px;
+	margin: 10px 0 0 0;
+}

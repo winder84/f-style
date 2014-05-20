@@ -11,3 +11,8 @@ Content:
       name:                   Slider|Sliders
       components:
         list:
+    maincentertexts:
+      model:                  Maincentertexts
+      name:                   Текст в центре на главной|Тексты в центре на главной
+      components:
+        list:

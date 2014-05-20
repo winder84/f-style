@@ -7,3 +7,8 @@ Slider:
       class:      DmMedia
       local:      image_id
       onDelete:   RESTRICT # the image can not be deleted, unless if the article is deleted before
+
+Maincentertexts:
+  columns:
+    title:             { type: string(255), notnull: true }
+    description:       { type: clob, extra: markdown }

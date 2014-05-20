@@ -1,0 +1,33 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Slider
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: slider
+    with_doctrine_route: false
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=id'
+          - image_id
+        sort:
+          - id
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - id
+          - image_id
+      form:
+        display:
+          Image: [image_id_form, image_id_view]
+        class: SliderAdminForm
+        fields: {  }
+      edit: ~
+      new: ~
