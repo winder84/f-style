@@ -12,3 +12,20 @@ Maincentertexts:
   columns:
     title:             { type: string(255), notnull: true }
     description:       { type: clob, extra: markdown }
+
+Category:
+  columns:
+    title:            { type: string(255), notnull: true }
+    description:      { type: clob, extra: ckeditor }
+    image_id:         { type: integer }
+    sort:             { type: integer }
+    is_active:        { type: boolean, notnull: true, default:true}
+    is_on_main:       { type: boolean, notnull: true, default:false}
+    category_id:      { type: integer }
+  relations:
+    Category:
+      foreignAlias:   Categories
+    Image:
+      class:      DmMedia
+      local:      image_id
+      onDelete:   RESTRICT
