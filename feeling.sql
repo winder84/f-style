@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Май 21 2014 г., 10:37
+-- Время создания: Май 21 2014 г., 15:15
 -- Версия сервера: 5.1.73
 -- Версия PHP: 5.3.3
 
@@ -23,6 +23,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8_unicode_ci,
+  `image_id` bigint(20) DEFAULT NULL,
+  `sort` bigint(20) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL DEFAULT '1',
+  `category_id` bigint(20) DEFAULT NULL,
+  `is_on_main` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `category_category_id_idx` (`category_id`),
+  KEY `category_image_id_idx` (`image_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `category`
+--
+
+INSERT INTO `category` (`id`, `title`, `description`, `image_id`, `sort`, `is_active`, `category_id`, `is_on_main`) VALUES
+(1, 'sfghnsgh', 'sfghsfghsg sgh sgh sfgh sgh sgh sghsgfhsgh', 6, 1, 1, NULL, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `dm_area`
 --
 
@@ -34,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `dm_area` (
   PRIMARY KEY (`id`),
   KEY `dm_layout_id_idx` (`dm_layout_id`),
   KEY `dm_page_view_id_idx` (`dm_page_view_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Дамп данных таблицы `dm_area`
@@ -50,7 +77,9 @@ INSERT INTO `dm_area` (`id`, `dm_layout_id`, `dm_page_view_id`, `type`) VALUES
 (7, NULL, 3, 'content'),
 (8, NULL, 4, 'content'),
 (9, NULL, 5, 'content'),
-(10, NULL, 6, 'content');
+(10, NULL, 6, 'content'),
+(11, NULL, 7, 'content'),
+(12, NULL, 8, 'content');
 
 -- --------------------------------------------------------
 
@@ -66,7 +95,14 @@ CREATE TABLE IF NOT EXISTS `dm_auto_seo` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `dmAutoSeoModuleAction_idx` (`module`,`action`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Дамп данных таблицы `dm_auto_seo`
+--
+
+INSERT INTO `dm_auto_seo` (`id`, `module`, `action`, `created_at`, `updated_at`) VALUES
+(1, 'category', 'show', '2014-05-21 13:22:29', '2014-05-21 13:22:29');
 
 -- --------------------------------------------------------
 
@@ -86,6 +122,13 @@ CREATE TABLE IF NOT EXISTS `dm_auto_seo_translation` (
   `lang` char(2) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`,`lang`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Дамп данных таблицы `dm_auto_seo_translation`
+--
+
+INSERT INTO `dm_auto_seo_translation` (`id`, `slug`, `name`, `title`, `h1`, `description`, `keywords`, `strip_words`, `lang`) VALUES
+(1, '%category.title%', '%category.title%', '%category.title%', NULL, '%category.description%', NULL, NULL, 'ru');
 
 -- --------------------------------------------------------
 
@@ -305,14 +348,14 @@ CREATE TABLE IF NOT EXISTS `dm_lock` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `dmLockIndex_idx` (`user_id`,`module`,`action`,`record_id`),
   KEY `user_id_idx` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=60 ;
 
 --
 -- Дамп данных таблицы `dm_lock`
 --
 
 INSERT INTO `dm_lock` (`id`, `user_id`, `user_name`, `module`, `action`, `record_id`, `time`, `app`, `url`, `culture`) VALUES
-(37, 1, 'admin', 'maincentertexts', 'edit', 3, 1400654241, 'admin', '/admin.php/content/global/tekstyi-v-tsentre-na-glavnoy/edit/pk/3', 'ru');
+(55, 1, 'admin', 'dmAdmin', 'index', 0, 1400670913, 'admin', '/admin.php/', 'ru');
 
 -- --------------------------------------------------------
 
@@ -370,7 +413,7 @@ CREATE TABLE IF NOT EXISTS `dm_media` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `folderFile_idx` (`dm_media_folder_id`,`file`),
   KEY `dm_media_folder_id_idx` (`dm_media_folder_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
 -- Дамп данных таблицы `dm_media`
@@ -381,7 +424,8 @@ INSERT INTO `dm_media` (`id`, `dm_media_folder_id`, `file`, `legend`, `author`, 
 (2, 3, 'slider1_1.png', '', '', '', 'image/png', 821327, '959x432', '2014-05-20 20:17:09', '2014-05-20 20:17:09'),
 (3, 3, 'slider1_2.png', '', '', '', 'image/png', 821327, '959x432', '2014-05-20 23:25:45', '2014-05-20 23:26:00'),
 (4, 3, 'slider1_3.png', '', '', '', 'image/png', 821327, '959x432', '2014-05-20 23:25:53', '2014-05-20 23:26:00'),
-(5, 3, 'slider1_4.png', '', '', '', 'image/png', 821327, '959x432', '2014-05-20 23:26:00', '2014-05-20 23:26:00');
+(5, 3, 'slider1_4.png', '', '', '', 'image/png', 821327, '959x432', '2014-05-20 23:26:00', '2014-05-20 23:26:00'),
+(6, 4, 'dDHFtJOFTtg.jpg', '', '', '', 'image/jpeg', 39442, '415x604', '2014-05-21 13:25:44', '2014-05-21 13:25:44');
 
 -- --------------------------------------------------------
 
@@ -397,16 +441,17 @@ CREATE TABLE IF NOT EXISTS `dm_media_folder` (
   `level` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `rel_path` (`rel_path`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Дамп данных таблицы `dm_media_folder`
 --
 
 INSERT INTO `dm_media_folder` (`id`, `rel_path`, `lft`, `rgt`, `level`) VALUES
-(1, '', 1, 6, 0),
+(1, '', 1, 8, 0),
 (2, 'assets', 2, 3, 1),
-(3, 'slider', 4, 5, 1);
+(3, 'slider', 4, 5, 1),
+(4, 'category', 6, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -425,19 +470,21 @@ CREATE TABLE IF NOT EXISTS `dm_page` (
   `level` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `recordModuleAction_idx` (`module`,`action`,`record_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `dm_page`
 --
 
 INSERT INTO `dm_page` (`id`, `module`, `action`, `record_id`, `credentials`, `lft`, `rgt`, `level`) VALUES
-(1, 'main', 'root', 0, '', 1, 12, 0),
+(1, 'main', 'root', 0, '', 1, 16, 0),
 (2, 'main', 'error404', 0, NULL, 4, 5, 1),
 (3, 'main', 'signin', 0, NULL, 2, 3, 1),
 (4, 'main', 'portfolio', 0, NULL, 6, 7, 1),
 (5, 'main', 'materialyi', 0, NULL, 8, 9, 1),
-(6, 'main', 'kontaktyi', 0, NULL, 10, 11, 1);
+(6, 'main', 'kontaktyi', 0, NULL, 10, 11, 1),
+(7, 'category', 'list', 0, NULL, 12, 15, 1),
+(8, 'category', 'show', 1, NULL, 13, 14, 2);
 
 -- --------------------------------------------------------
 
@@ -471,7 +518,9 @@ INSERT INTO `dm_page_translation` (`id`, `slug`, `name`, `title`, `h1`, `descrip
 (3, 'security/signin', 'Signin', 'Signin', NULL, NULL, NULL, 'snthdk', 1, 0, 1, 'ru'),
 (4, 'portfolio', 'Портфолио', 'Портфолио', NULL, NULL, NULL, 'snthdk', 1, 0, 1, 'ru'),
 (5, 'materialyi', 'Материалы', 'Материалы', NULL, NULL, NULL, 'snthdk', 1, 0, 1, 'ru'),
-(6, 'kontaktyi', 'Контакты', 'Контакты', NULL, NULL, NULL, 'snthdk', 1, 0, 1, 'ru');
+(6, 'kontaktyi', 'Контакты', 'Контакты', NULL, NULL, NULL, 'snthdk', 1, 0, 1, 'ru'),
+(7, 'kategorii', 'Категории', 'Категории', NULL, 'Категории', NULL, 'snthdk', 1, 0, 1, 'ru'),
+(8, 'kategorii/sfghnsgh', 'sfghnsgh', 'Sfghnsgh', NULL, 'sfghsfghsg sgh sgh sfgh sgh sgh sghsgfhsgh', NULL, 'snthdk', 1, 0, 1, 'ru');
 
 -- --------------------------------------------------------
 
@@ -487,7 +536,7 @@ CREATE TABLE IF NOT EXISTS `dm_page_view` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `dmPageViewModuleAction_idx` (`module`,`action`),
   KEY `dm_layout_id_idx` (`dm_layout_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Дамп данных таблицы `dm_page_view`
@@ -499,7 +548,9 @@ INSERT INTO `dm_page_view` (`id`, `module`, `action`, `dm_layout_id`) VALUES
 (3, 'main', 'signin', 1),
 (4, 'main', 'portfolio', 1),
 (5, 'main', 'materialyi', 1),
-(6, 'main', 'kontaktyi', 1);
+(6, 'main', 'kontaktyi', 1),
+(7, 'category', 'list', 1),
+(8, 'category', 'show', 1);
 
 -- --------------------------------------------------------
 
@@ -616,7 +667,7 @@ CREATE TABLE IF NOT EXISTS `dm_remember_key` (
 --
 
 INSERT INTO `dm_remember_key` (`dm_user_id`, `remember_key`, `ip_address`, `created_at`) VALUES
-(1, '1d2a0c4a16dc0585ac0e51bfdfada797', '89.249.20.142', '2014-05-21 09:42:28');
+(1, 'feab9ae37ee3a96218c433053bd0ca2a', '89.249.20.142', '2014-05-21 14:15:33');
 
 -- --------------------------------------------------------
 
@@ -657,7 +708,7 @@ CREATE TABLE IF NOT EXISTS `dm_setting` (
 INSERT INTO `dm_setting` (`id`, `name`, `type`, `params`, `group_name`, `credentials`) VALUES
 (1, 'site_name', 'text', NULL, 'site', NULL),
 (2, 'site_active', 'boolean', NULL, 'site', NULL),
-(3, 'site_indexable', 'boolean', NULL, 'site', NULL),
+(3, 'site_indexable', 'boolean', '', 'site', ''),
 (4, 'site_working_copy', 'boolean', NULL, 'site', NULL),
 (5, 'ga_key', 'text', NULL, 'tracking', 'google_analytics'),
 (6, 'ga_token', 'text', NULL, 'internal', 'google_analytics'),
@@ -696,14 +747,14 @@ CREATE TABLE IF NOT EXISTS `dm_setting_translation` (
 INSERT INTO `dm_setting_translation` (`id`, `description`, `value`, `default_value`, `lang`) VALUES
 (1, 'The site name', 'Feeling-style.ru', 'Feeling-style.ru', 'ru'),
 (2, 'Is the site ready for visitors ?', '1', '1', 'ru'),
-(3, 'Is the site ready for search engine crawlers ?', NULL, '0', 'ru'),
+(3, 'Is the site ready for search engine crawlers ?', '1', '0', 'ru'),
 (4, 'Is this site the current working copy ?', '1', '1', 'ru'),
 (5, 'The google analytics key without javascript stuff ( e.g. UA-9876614-1 )', NULL, '', 'ru'),
 (6, 'Auth token gor Google Analytics, computed from password', NULL, '', 'ru'),
 (7, 'The google webmaster tools filename without google and .html ( e.g. a913b555ba9b4f13 )', NULL, '', 'ru'),
 (8, 'The xiti html code', NULL, '', 'ru'),
 (9, 'Words to exclude from searches (e.g. the, a, to )', NULL, '', 'ru'),
-(10, 'Diem base urls for different applications/environments/cultures', '{"front-prod":"http:\\/\\/\\/index.php","admin-prod":"http:\\/\\/feeling-style.ru\\/admin.php","front-dev":"http:\\/\\/feeling-style.ru\\/dev.php"}', '', 'ru'),
+(10, 'Diem base urls for different applications/environments/cultures', '{"front-prod":"http:\\/\\/feeling-style.ru\\/index.php","admin-prod":"http:\\/\\/feeling-style.ru\\/admin.php","front-dev":"http:\\/\\/feeling-style.ru\\/dev.php"}', '', 'ru'),
 (11, 'Default method when an image needs to be resized', 'center', 'center', 'ru'),
 (12, 'Jpeg default quality when generating thumbnails', '95', '95', 'ru'),
 (13, 'Links to other domain get automatically a _blank target', NULL, '0', 'ru'),
@@ -729,7 +780,7 @@ CREATE TABLE IF NOT EXISTS `dm_trans_unit` (
   `updated_at` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `dm_catalogue_id_idx` (`dm_catalogue_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=400 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=403 ;
 
 --
 -- Дамп данных таблицы `dm_trans_unit`
@@ -1134,7 +1185,10 @@ INSERT INTO `dm_trans_unit` (`id`, `dm_catalogue_id`, `source`, `target`, `meta`
 (396, 2, 'Cut', 'Вырезать', NULL, '2014-05-20 09:39:42', '2014-05-20 09:39:42'),
 (397, 2, 'Copy', 'Копировать', NULL, '2014-05-20 09:39:42', '2014-05-20 09:39:42'),
 (398, 2, 'Paste', 'Вставить', NULL, '2014-05-20 09:39:42', '2014-05-20 09:39:42'),
-(399, 1, 'Sliders', 'Слайдеры', '', '2014-05-21 09:43:12', '2014-05-21 09:43:12');
+(399, 1, 'Sliders', 'Слайдеры', '', '2014-05-21 09:43:12', '2014-05-21 09:43:12'),
+(400, 1, 'On main', 'На главной', '', '2014-05-21 13:23:05', '2014-05-21 13:23:05'),
+(401, 1, 'Category', 'Категория', '', '2014-05-21 13:26:04', '2014-05-21 13:26:04'),
+(402, 1, 'Image', 'Изображение', '', '2014-05-21 13:26:37', '2014-05-21 13:26:37');
 
 -- --------------------------------------------------------
 
@@ -1165,7 +1219,7 @@ CREATE TABLE IF NOT EXISTS `dm_user` (
 --
 
 INSERT INTO `dm_user` (`id`, `username`, `email`, `algorithm`, `salt`, `password`, `is_active`, `is_super_admin`, `last_login`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@feeling-style.ru.com', 'sha1', '4a7cabc6b697e9cd42bdc42f0218b5a0', 'bbfe011257c534fce2f210c08b49eaba0ef08de5', 1, 1, '2014-05-21 10:26:49', '2014-05-20 09:39:39', '2014-05-20 09:39:39');
+(1, 'admin', 'admin@feeling-style.ru.com', 'sha1', '4a7cabc6b697e9cd42bdc42f0218b5a0', 'bbfe011257c534fce2f210c08b49eaba0ef08de5', 1, 1, '2014-05-21 14:15:33', '2014-05-20 09:39:39', '2014-05-20 09:39:39');
 
 -- --------------------------------------------------------
 
@@ -1249,7 +1303,7 @@ CREATE TABLE IF NOT EXISTS `dm_widget_translation` (
 INSERT INTO `dm_widget_translation` (`id`, `value`, `lang`) VALUES
 (1, '{"text":"Page not found","tag":"h1"}', 'ru'),
 (2, '[]', 'ru'),
-(3, '{"text":"\\u0427\\u0443\\u0432\\u0441\\u0442\\u0432\\u043e \\u0441\\u0442\\u0438\\u043b\\u044f","tag":"h1","href":"page:1 Home"}', 'ru'),
+(3, '{"text":"\\u0427\\u0443\\u0432\\u0441\\u0442\\u0432\\u043e \\u0441\\u0442\\u0438\\u043b\\u044f","tag":"p","href":"page:1 Home"}', 'ru'),
 (4, '{"title":"","text":"","mediaId":null,"titleLink":"","mediaLink":"","titlePosition":"outside","width":"","height":"","legend":"","method":"center","background":"FFFFFF","quality":null}', 'ru'),
 (5, '{"ulClass":"","liClass":"","menuClass":"","items":[{"link":"page:1","text":"\\u041e \\u043d\\u0430\\u0441","depth":"0"},{"link":"page:4","text":"\\u041f\\u043e\\u0440\\u0442\\u0444\\u043e\\u043b\\u0438\\u043e","depth":"0"},{"link":"page:5","text":"\\u041c\\u0430\\u0442\\u0435\\u0440\\u0438\\u0430\\u043b\\u044b","depth":"0"},{"link":"page:6","text":"\\u041a\\u043e\\u043d\\u0442\\u0430\\u043a\\u0442\\u044b","depth":"0"}]}', 'ru'),
 (6, '[]', 'ru'),
@@ -1274,7 +1328,7 @@ CREATE TABLE IF NOT EXISTS `dm_zone` (
   `position` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `dm_area_id_idx` (`dm_area_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Дамп данных таблицы `dm_zone`
@@ -1294,7 +1348,9 @@ INSERT INTO `dm_zone` (`id`, `dm_area_id`, `css_class`, `width`, `position`) VAL
 (11, 8, NULL, NULL, -8),
 (12, 9, NULL, NULL, -9),
 (13, 10, NULL, NULL, -10),
-(14, 5, NULL, NULL, 1);
+(14, 5, NULL, NULL, 1),
+(15, 11, NULL, NULL, -11),
+(16, 12, NULL, NULL, -12);
 
 -- --------------------------------------------------------
 
@@ -1334,7 +1390,7 @@ CREATE TABLE IF NOT EXISTS `migration_version` (
 --
 
 INSERT INTO `migration_version` (`version`) VALUES
-(5);
+(11);
 
 -- --------------------------------------------------------
 
@@ -1362,6 +1418,13 @@ INSERT INTO `slider` (`id`, `image_id`) VALUES
 --
 -- Ограничения внешнего ключа сохраненных таблиц
 --
+
+--
+-- Ограничения внешнего ключа таблицы `category`
+--
+ALTER TABLE `category`
+  ADD CONSTRAINT `category_category_id_category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
+  ADD CONSTRAINT `category_image_id_dm_media_id` FOREIGN KEY (`image_id`) REFERENCES `dm_media` (`id`);
 
 --
 -- Ограничения внешнего ключа таблицы `dm_area`
