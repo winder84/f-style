@@ -20,7 +20,7 @@ Category:
     image_id:         { type: integer }
     sort:             { type: integer }
     is_active:        { type: boolean, notnull: true, default:true}
-    is_on_main:       { type: boolean, notnull: true, default:false}
+#    is_on_main:       { type: boolean, notnull: true, default:false}
     category_id:      { type: integer }
   relations:
     Category:

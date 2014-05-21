@@ -12,8 +12,6 @@ generator:
       fields:
         is_active:
           label: Active
-        is_on_main:
-          label: 'On main'
       list:
         display:
           - '=title'
@@ -23,7 +21,6 @@ generator:
           - description
           - sort
           - is_active
-          - is_on_main
         sort:
           - title
           - asc
@@ -34,14 +31,13 @@ generator:
         display:
           - title
           - is_active
-          - is_on_main
           - description
           - image_id
           - sort
           - category_id
       form:
         display:
-          NONE: [title, category_id, is_active, is_on_main]
+          NONE: [title, is_active, category_id]
           Image: [image_id_form, image_id_view]
           Description: [description]
           Категории: [categories_list]
