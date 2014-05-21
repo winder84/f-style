@@ -10,17 +10,14 @@
 		})
 		.mouseout(function() {
 			$(this).attr('src', '/theme/images/slide_left.png')})
-		.click(sliderPrev)
-	;
+		.click(sliderPrev);
 	$('.slide_right img')
 		.mouseover(function() {
 			$(this).attr('src', '/theme/images/slide_right_hover.png')
 		})
 		.mouseout(function() {
 			$(this).attr('src', '/theme/images/slide_right.png')})
-		.click(sliderNext)
-	;
-	// Here is the entry point for your front javascript
+		.click(sliderNext);
 
 	function sliderNext() {
 		$('.feel_slider li:visible').fadeOut(500, function() {
@@ -50,6 +47,7 @@
 			id = nextSlide.attr('id').replace('slide_', '');
 			$('.slider_point').children('img').attr('src', '/theme/images/point_grey.png');
 			$('#slide_point_' + id).children('img').attr('src', '/theme/images/point_black.png');
+
 			nextSlide.fadeIn(500, function() {
 				$(this).removeClass('slide_li_hidden');
 			});
