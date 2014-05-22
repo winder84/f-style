@@ -20,12 +20,8 @@ generator:
           - '=title'
           - category_id
           - logo_id
-          - dm_gallery
-          - description
           - sort
           - is_active
-          - agent
-          - agent_text
           - is_on_main
         sort:
           - title
@@ -49,9 +45,10 @@ generator:
           NONE: [title, is_active, is_on_main, category_id]
           Logo: [logo_id_form, logo_id_view]
           Description: [description]
+          Agent: [agent]
           'Agent text': [agent_text]
           Gallery: [dm_gallery]
-          Others: [sort, agent]
+          Others: [sort]
         class: ProductAdminForm
         fields: {  }
       edit: ~
