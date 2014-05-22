@@ -1,7 +1,6 @@
 Content:
 
-  Feeling-style.ru:
-  
+  Главная:
     main:                   # the main module is required, and must not be removed.
       components:
         header:
@@ -16,10 +15,20 @@ Content:
       name:                   Текст в центре на главной|Тексты в центре на главной
       components:
         list:
+  Продукция:
     category:
       model:                  Category
       page:                   true
       name:                   Категория|Категории
       components:
+        list:
+        show:
+    product:
+      parent:                 category
+      page:                   true
+      name:                   Продукция|Продукция
+      components:
+        listByCategory:
+          filters:            [ category ]
         list:
         show:
