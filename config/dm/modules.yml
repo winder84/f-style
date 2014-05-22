@@ -30,5 +30,6 @@ Content:
       components:
         listByCategory:
           filters:            [ category ]
+        listOnMain:
         list:
         show:

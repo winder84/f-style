@@ -217,7 +217,7 @@ h4 {
 	width: 970px;
 	height: 240px;
 	background: url("../images/mainCenterTextsBg.png") no-repeat;
-	margin: 20px 0 20px -5px;
+	margin: 20px 0 0 -5px;
 	padding: 10px;
 }
 
@@ -238,4 +238,71 @@ h4 {
 .mainCenterText {
 	font-size: 18px;
 	margin: 10px 0 0 0;
+}
+
+.main_products {
+	margin: 0 0 0 -5px;
+	padding: 0;
+	width: 970px;
+	height: 452px;
+	background: url("../images/main_products_bg.jpg") no-repeat;
+}
+
+.main_products h3 {
+	padding: 20px 0 0 30px;
+}
+
+.main_products li {
+	display: inline-block;
+}
+
+.product_logos {
+	display: inline-block;
+	cursor: pointer;
+	margin: 20px 0 0 50px;
+}
+
+.main_products_del {
+	margin: 10px 0 0 5px;
+}
+
+.agent_ul li {
+	vertical-align: top;
+}
+
+.agent_ul {
+	padding: 0;
+	margin: 0;
+}
+
+.agent_first_li {
+	display: inline-block;
+	width: 350px;
+}
+
+.agent_second_li {
+	padding: 0;
+	margin: 0 0 0 30px;
+	width: 560px;
+	display: inline-block;
+}
+
+#product_agent {
+	margin: 5px;
+}
+#product_agent_text {
+	font-size: 18px;
+	padding: 10px 0 0 30px;
+}
+
+.agent_medias li {
+	margin: 5px;
+	display: inline-block;
+}
+
+.agent_medias {
+	height: 230px;
+	padding: 0;
+	margin: 5px 0 0 60px;
+	display: none;
 }

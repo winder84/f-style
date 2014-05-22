@@ -3,6 +3,12 @@
 	$(document).ready(function(){
 		sliderInterval = setInterval(sliderNext, 6000);
 		$('.slider_point:first').children('img').attr('src', '/theme/images/point_black.png');
+		agent = $('.product_agent:first').text();
+		agent_text = $('.product_agent_text:first').text();
+		id = parseInt($('.product_agent:first').attr('id').replace('main_product_agent_', ''));
+		$('#media_' + id).fadeIn();
+		$('#product_agent').html(agent);
+		$('#product_agent_text').html(agent_text);
 	});
 	$('.slide_left img')
 		.mouseover(function() {
@@ -55,4 +61,18 @@
 		clearInterval(sliderInterval)
 		sliderInterval = setInterval(sliderNext, 6000);
 	}
+
+	function agentChange(id) {
+	}
+
+	$('.product_logos').on('click', function () {
+		id = $(this).attr('id').replace('logo_', '');
+		$('.agent_medias').fadeOut(10, function () {
+			$('#media_' + id).fadeIn(300);
+		});
+		agent = $('#main_product_agent_' + id).text();
+		agent_text = $('#main_product_agent_text_' + id).text();
+		$('#product_agent').html(agent);
+		$('#product_agent_text').html(agent_text);
+	});
 })(jQuery);
