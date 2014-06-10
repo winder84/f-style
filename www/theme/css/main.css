@@ -208,7 +208,7 @@ h4 {
 .horDelimer {
 	width: 960px;
 	height: 1px;
-	margin: 5px 0 0 0;
+	margin: 0;
 	padding: 0;
 	background: url("../images/horDelimer.png") no-repeat;
 }
@@ -307,4 +307,111 @@ h4 {
 	padding: 0;
 	margin: 5px 0 0 80px;
 	display: none;
+}
+
+.portfolio_header_line {
+	width: 960px;
+	height: 51px;
+	background: url("../images/portfolio_header_line.png") no-repeat;
+	margin: -25px 0 0 0;
+}
+
+.portfolioHeaderUl {
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+
+.portfolioHeaderUl ul {
+	list-style: none;
+	display: inline-block;
+	width: 440px;
+	vertical-align: top;
+}
+
+.portfolioCategoryUl {
+	margin-top: -30px;
+	font-size: 24px;
+}
+
+.portfolioTextUl {
+	padding: 0 0 20px 20px;
+}
+
+.portfolioCategoryUl li {
+	display: inline-block;
+}
+
+.portfolioCategoryUl li:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.portfolioCategoryUl .active {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.portfolioTitle {
+	text-align: right;
+	padding: 0 20px 0 0;
+	font-size: 28px;
+	text-decoration: underline;
+}
+
+.portfolioDescription {
+	text-align: left;
+	padding: 20px 20px 0 0;
+	font-size: 18px;
+}
+
+.portfolioUl {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+
+.portfolioUl li {
+	margin: 0;
+	padding: 10px 0;
+}
+
+.portfolioProduct {
+	display: none;
+}
+
+.portfolioProduct p {
+	width: 350px;
+	padding-left: 20px;
+}
+
+.portfolioProduct h4 {
+	vertical-align: top;
+	margin: 0 0 0 20px;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+.productBlock {
+	display: inline-block;
+	width: 420px
+}
+
+.galleryUl {
+	vertical-align: top;
+	width: 520px;
+	padding: 0 0 0 10px;
+}
+
+.galleryUl img {
+	margin: 5px;
+}
+
+.portfolioFake {
+	width: 960px;
+	height: 900px;
+	background: url("../images/portfolio_fake.png") no-repeat;
+	padding: 0;
+	margin: 0;
 }
