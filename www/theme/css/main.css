@@ -55,7 +55,7 @@ h4 {
 .headerPhone {
 	list-style: none;
 	text-align: right;
-	margin-top: 10px;
+	margin: 10px 0 -20px 0;
 }
 
 .headerPhone li {
