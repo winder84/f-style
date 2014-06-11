@@ -88,4 +88,6 @@
 		$('#product_agent').html(agent);
 		$('#product_agent_text').html(agent_text);
 	});
+
+	$("a.toFancy").fancybox();
 })(jQuery);

@@ -31,7 +31,7 @@ echo _open('ul.main_products');
 			foreach ($keys as $key) {
 				echo _open('ul.agent_medias#media_' . $key);
 					foreach ($agent_media[$key] as $media) {
-						echo _tag('li', _media($media)->size(150, 100)->method('fit'));
+						echo _tag('li', _tag('a.toFancy', array('href' => '/uploads/' . $media, 'rel' => 'group_' . $key), _media($media)->size(150, 100)));
 					}
 				echo _close('ul');
 			}

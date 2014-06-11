@@ -28,7 +28,7 @@ echo _close('ul');
 echo _tag('div.horDelimer');
 
 echo _open('ul.portfolioUl');
-	foreach ($productPager as $product)
+	foreach ($productPager as $pKey => $product)
 	{
 		echo _open('li.portfolioProduct#categoryId_' . $product->Category->id);
 			echo _open('div.productBlock');
@@ -42,7 +42,7 @@ echo _open('ul.portfolioUl');
 			echo _open('ul.productBlock.galleryUl');
 				foreach($product->getDmGallery() as $media)
 				{
-					echo _media($media)->size(160, 95)->method('fit');
+					echo _tag('a.toFancy', array('href' => '/uploads/' . $media, 'rel' => 'group_' . $pKey), _media($media)->size(160, 95)->method('fit'));
 				}
 			echo _close('ul');
 			echo _tag('div.horDelimer');
