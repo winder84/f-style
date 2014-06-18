@@ -43,3 +43,10 @@ Product:
       class:      DmMedia
       local:      logo_id
       onDelete:   RESTRICT
+
+Contact:
+  actAs:              [ Timestampable ]
+  columns:
+    name:             { type: string(255), notnull: true }
+    email:            { type: string(255), notnull: true }
+    body:             { type: clob }

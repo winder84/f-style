@@ -5,6 +5,7 @@ Content:
       components:
         header:
         footer:
+        contacts:
     slider:
       model:                  Slider
       name:                   Slider|Sliders
@@ -33,3 +34,7 @@ Content:
         listOnMain:
         list:
         show:
+  Feedback:              # arbitrary namespace, used in admin content menu
+    contact:             # module's name
+      components:        # module's components
+        form:            # this module has a form action

@@ -415,3 +415,107 @@ h4 {
 	padding: 0;
 	margin: 0;
 }
+
+.contactsTextMapDiv {
+	width: 960px;
+	background: #fff;
+}
+
+.contactsTExtUl {
+	margin: 0;
+	padding: 0 30px;
+	list-style: none;
+}
+
+.contactsTExtUl li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+}
+
+.contactsTExtUl h2 {
+	font-size: 28px;
+	font-weight: normal;
+}
+
+.contactsTExtUl p {
+	font-size: 20px;
+}
+
+.contactsRightLi {
+	text-align: right;
+}
+
+.contactsMap {
+	width: 960px;
+	height: 296px;
+	background: url("../images/contactsMap.png") no-repeat;
+	border-top: 1px groove #eee;
+	border-bottom: 1px groove #eee;
+}
+
+.contactsPhonesP {
+	margin: 0;
+	font-size: 20px;
+	padding: 40px 30px;
+}
+
+.contForm {
+	padding: 20px 0 0 30px;
+	background: #fff;
+}
+
+.contForm h2 {
+	font-size: 28px;
+	font-weight: normal;
+}
+
+.contact_form_table {
+	width: 960px;
+}
+
+.contact_form_table td {
+	vertical-align: top;
+	width: 460px;
+}
+
+.contact_form_table input[type='text'] {
+	width: 350px;
+	border: 1px groove #ccc;
+	margin-bottom: 5px;
+}
+
+.contact_form_table input[type='submit'] {
+	margin-top: 15px;
+	width: 118px;
+	height: 44px;
+	border: none;
+	background: url("../images/contactsFormButton.png") no-repeat;
+	color: #fff;
+	cursor: pointer;
+}
+
+.contact_form_table textarea {
+	width: 400px;
+	resize: none;
+	height: 120px;
+	border: 1px groove #ccc;
+}
+
+.error_list {
+	margin: 0;
+	list-style: none;
+	color: red;
+	font-size: 12px;
+}
+
+.contactsZone {
+	margin-bottom: 20px;
+}
+
+.contactsPodl {
+	width: 960px;
+	height: 31px;
+	background: url("../images/contactsPodl.png") repeat-x;
+}
