@@ -15,10 +15,11 @@ Maincentertexts:
 
 Category:
   columns:
-    title:            { type: string(255), notnull: true }
-    sort:             { type: integer }
-    is_active:        { type: boolean, notnull: true, default:true}
-    category_id:      { type: integer }
+    title:                  { type: string(255), notnull: true }
+    sort:                   { type: integer }
+    is_active:              { type: boolean, notnull: true, default:true}
+    category_id:            { type: integer }
+    is_material_category:   { type: boolean, notnull: true, default:false}
   relations:
     Category:
       foreignAlias:   Categories
@@ -36,6 +37,7 @@ Product:
     agent:             { type: string(255) }
     agent_text:        { type: clob, extra: markdown }
     is_on_main:        { type: boolean, notnull: true, default:false}
+    is_material:       { type: boolean, notnull: true, default:false}
   relations:
     Category:
       foreignAlias:   Products

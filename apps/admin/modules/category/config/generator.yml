@@ -12,6 +12,8 @@ generator:
       fields:
         is_active:
           label: Active
+        is_material_category:
+          label: 'Material category'
       list:
         display:
           - '=title'
@@ -20,6 +22,7 @@ generator:
           - products_list
           - sort
           - is_active
+          - is_material_category
         sort:
           - title
           - asc
@@ -30,11 +33,12 @@ generator:
         display:
           - title
           - is_active
+          - is_material_category
           - sort
           - category_id
       form:
         display:
-          NONE: [title, is_active, category_id]
+          NONE: [title, is_active, is_material_category, category_id]
           Категории: [categories_list]
           Продукция: [products_list]
           Others: [sort]

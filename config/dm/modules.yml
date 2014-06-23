@@ -33,6 +33,7 @@ Content:
           filters:            [ category ]
         listOnMain:
         list:
+        listMaterials:
         show:
   Feedback:              # arbitrary namespace, used in admin content menu
     contact:             # module's name

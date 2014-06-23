@@ -28,6 +28,13 @@ class productComponents extends myFrontModuleComponents
     $this->productPager = $this->getPager($query);
   }
 
+  public function executeListMaterials()
+  {
+    $query = $this->getListQuery();
+    
+    $this->productPager = $this->getPager($query);
+  }
+
   public function executeShow()
   {
     $query = $this->getShowQuery();

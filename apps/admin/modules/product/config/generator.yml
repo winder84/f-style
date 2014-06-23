@@ -14,6 +14,8 @@ generator:
           label: Active
         is_on_main:
           label: 'On main'
+        is_material:
+          label: Material
         dm_gallery: Gallery
       list:
         display:
@@ -23,6 +25,7 @@ generator:
           - sort
           - is_active
           - is_on_main
+          - is_material
         sort:
           - title
           - asc
@@ -34,6 +37,7 @@ generator:
           - title
           - is_active
           - is_on_main
+          - is_material
           - description
           - logo_id
           - sort
@@ -42,13 +46,12 @@ generator:
           - agent_text
       form:
         display:
-          NONE: [title, is_active, is_on_main, category_id]
+          NONE: [title, is_active, is_on_main, is_material, category_id]
           Logo: [logo_id_form, logo_id_view]
           Description: [description]
-          Agent: [agent]
           'Agent text': [agent_text]
           Gallery: [dm_gallery]
-          Others: [sort]
+          Others: [sort, agent]
         class: ProductAdminForm
         fields: {  }
       edit: ~
