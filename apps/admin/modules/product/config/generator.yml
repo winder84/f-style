@@ -49,9 +49,10 @@ generator:
           NONE: [title, is_active, is_on_main, is_material, category_id]
           Logo: [logo_id_form, logo_id_view]
           Description: [description]
+          Agent: [agent]
           'Agent text': [agent_text]
           Gallery: [dm_gallery]
-          Others: [sort, agent]
+          Others: [sort]
         class: ProductAdminForm
         fields: {  }
       edit: ~
