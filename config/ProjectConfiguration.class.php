@@ -1,6 +1,6 @@
 <?php
 
-require_once '/var/www/winder84/data/www/diem/dmCorePlugin/lib/core/dm.php';
+require_once '/var/diem50/dmCorePlugin/lib/core/dm.php';
 dm::start();
 
 class ProjectConfiguration extends dmProjectConfiguration
