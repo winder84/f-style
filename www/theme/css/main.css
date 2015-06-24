@@ -218,7 +218,7 @@ h4 {
 	height: 240px;
 	background: url("../images/mainCenterTextsBg.png") no-repeat;
 	margin: 20px 0 0 -5px;
-	padding: 10px;
+	padding: 10px 10px 0 10px;
 }
 
 .mainCenterTexts li {
@@ -415,6 +415,14 @@ h4 {
 	background: url("../images/portfolio_fake.png") no-repeat;
 	padding: 0;
 	margin: 0;
+}
+
+.mainFake {
+	width: 990px;
+	height: 550px;
+	background: url("../images/mainFake.png") no-repeat;
+	padding: 0;
+	margin: 0 0 0 -5px;
 }
 
 .contactsTextMapDiv {

@@ -15,5 +15,6 @@ foreach ($maincentertextsPager as $key => $maincentertexts)
 }
 
 echo _close('ul');
+echo _tag('div.mainFake');
 
 echo $maincentertextsPager->renderNavigationBottom();
